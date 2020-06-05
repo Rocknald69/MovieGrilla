@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+
+      /* Icon FOnts */
+
+
+@font-face {
+   font-family: 'icomoon';
+   src:  url('./fonts/icomoon.eot');
+   src:  url('./fonts/icomoon.eot') format('embedded-opentype'),
+     url('./fonts/icomoon.ttf') format('truetype'),
+     url('./fonts/icomoon.woff') format('woff'),
+     url('./fonts/icomoon.svg') format('svg');
+   font-weight: normal;
+   font-style: normal;
+   font-display: block;
+ }
+ 
+ [class^="icon-"], [class*=" icon-"] {
+   /* use !important to prevent issues with browser extensions that change fonts */
+   font-family: 'icomoon' !important;
+   speak: none;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   display: inline-block;
+   font-size: 50px;
+   height: 50px;
+   margin: 5px 10px;
+   background-size: 50px 50px;
+   text-decoration: none;
+   color: white;
+
+   /* Better Font Rendering =========== */
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+ }
+ 
+ .icon-cog:before {
+  content: "\e901";
+}
+.icon-gear:before {
+  content: "\e901";
+}
+.icon-preferences:before {
+  content: "\e901";
+}
+.icon-settings:before {
+  content: "\e901";
+}
+.icon-generate:before {
+  content: "\e901";
+}
+.icon-control:before {
+  content: "\e901";
+}
+.icon-options:before {
+  content: "\e901";
+}
+.icon-heart:before {
+  content: "\e902";
+}
+.icon-like:before {
+  content: "\e902";
+}
+.icon-love:before {
+  content: "\e902";
+}
+.icon-favorite:before {
+  content: "\e902";
+}
+.icon-fire:before {
+  content: "\e903";
+}
+.icon-flame:before {
+  content: "\e903";
+}
+.icon-hot:before {
+  content: "\e903";
+}
+.icon-popular:before {
+  content: "\e903";
+}
+.icon-home:before {
+  content: "\e904";
+}
+.icon-house:before {
+  content: "\e904";
+}
+.icon-menu:before {
+  content: "\e900";
+}
+
+   body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+   }
+
+
+
+   .container {
+      display: grid;
+      grid-template-columns: 100px repeat(5, 1fr);
+      grid-template-rows: 60px repeat(2 ,300px);
+      height: 1vh;
+      grid-gap: 0 10px ;
+   }
+
+
+
+   .post-list{
+      display:grid;
+      /* grid-template-columns:repeat(3, 340px); */
+      grid-template-columns:repeat(3, minmax( auto, 330px));
+      grid-template-rows:  repeat(1, 1fr);
+      grid-gap: 10px;
+      align-content: space-center;
+      justify-content: space-evenly;
+ 
+   }
+   .post {
+      position: relative;
+
+
+
+   }
+   .post span {
+      padding: 0 25px;
+      font-size: 12px;
+      
+   }
+   .post-image {
+      
+   }
+   .post-image {
+      margin: 0;
+      
+   }
+   .post-image img {
+      width: 100%;
+      /* overflow: auto; */
+   }
+   .post-overlay {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(14, 133, 73, 0.747);
+      color: white;
+   }
+
+   .item {
+      /* border: 1px solid red; */
+      
+   }
+   .header{
+      grid-column: 1 /  6 span ;
+      grid-row: 1/ 1;
+
+      box-shadow: 1px 1px 10px gray;
+      width: 100%;
+      /* height: ; */
+      
+   }
+
+   .header ul {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      list-style: none;
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      justify-content: space-between;
+      
+   }
+   .header ul li {
+      max-width: 100%;
+      
+   }
+   .logo {
+      display:flex;
+      height: 50px;
+      width:70px; 
+      margin: 0;
+      justify-self: center;
+   }
+   .header span {
+      color: red;
+      text-align: center;
+      align-self: center;
+      font-size: 30px;
+    
+   }
+   .buscar {
+      justify-self: center;
+      align-self: center;
+      width: 33%;
+   }
+   .buscar form  input{
+      width: 100%;
+      text-align: center ;
+      padding: .5em;
+      border-radius:.6em;
+   }
+
+   .autor {
+      color: rgb(8, 122, 23); 
+      display: flex;
+      font-weight: 900;
+      
+   }
+   .autor img {
+      border-radius: 100%;
+      width: 50px;
+      align-self: center;
+   }
+   .autor span {
+      color: rgb(1, 148, 87);
+      text-align: center;
+      align-self: center;
+      font-size: 1em;
+      
+   }
+
+   .left {
+      grid-column: 2 / 1 ;
+      grid-row: 19/ 2; 
+      background-color: rgba(14, 133, 73, 0.747);
+   
+   }
+   .left [class^="icon-"], [class*=" icon-"] {
+      font-size: 3em;
+      text-align: center;
+      /* align-content: center; */
+      margin: 10px 0 auto;
+      display: block;
+      cursor: pointer;
+   }
+   .left .icon-gear {
+      margin-top: 380px;
+   }
+   .left span {
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: capitalize;
+      text-align:center;
+      color: white;
+      margin: 10px 0 auto;
+      display: block;
+      cursor: pointer;
+   }
+   .content {
+      grid-column: 2/ 7 ;
+      grid-row: 19 / 2 ;
+      
+      /* background-color: lightblue; */
+   }
+   .footer {
+      grid-column: 1/ 7;
+      grid-row: 20/19;
+      background-color: black; 
+   }
+   .titulo{
+      grid-column: 1 / 4 ;
+      grid-row: 1/ 2 span; 
+   }
+   .titulo h1{
+      color: gray;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: capitalize;
+      margin-left: 40px;
+      font-size: 20px;
+   }
+   </style>
+</head>
+
+<body>
+   <body>
+      <section class="container">
+
+   <div class="item header"> 
+      <ul>
+         <li class="logo">
+            <img src="popcorn-movie-time-512.png" alt="" width="50px"> <span> movi.com</span>
+         </li>
+         <li class="buscar">
+            <form action="">
+               <input type="text" placeholder="Busca Tu peli, actor, actriz o director favorito">
+            </form>
+         </li>
+         <li class="autor"> 
+            <span>Ronald Garcia</span>
+            <img src="bambi.jpg" alt="">
+         </li>
+      </ul>
+   </div>
+</div>
+<div class="item left"> 
+
+   <i class="icon-house home-button">    
+   </i>
+   <span>home</span>
+   <i class="icon-hot hot-button"></i> 
+       <span>trending</span>
+   <i class="icon-heart heart-button"> </i>
+       <span>Más likes</span>
+   <i class="icon-gear gear-button"> </i>
+       <span>Ajustes</span>
+
+</div>
+   <div class="item content"> 
+      <div class="titulo"><h1>Ahora en cines</h1></div> 
+      <section class="post-list">
+         <a href="#" class="post">
+            <figure class="post-image">
+               <img src="maxresdefault.jpg" alt="">
+            </figure>
+            <span class="post-overlay">
+               <h2>Mascotas, la vida secreta 2</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, maxime?</p>
+            </span>
+         </a>
+         <a href="#" class="post">
+            <figure class="post-image">
+               <img src="maxresdefault.jpg" alt="">
+            </figure>
+            <span class="post-overlay">
+               <h2>Mascotas, la vida secreta 2</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, maxime?</p>
+            </span>
+         </a>
+         <a href="#" class="post">
+            <figure class="post-image">
+               <img src="maxresdefault.jpg" alt="">
+            </figure>
+            <span class="post-overlay">
+               <h2>Mascotas, la vida secreta 2</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, maxime?</p>
+            </span>
+         </a>
+      </section>
+      <div class="titulo"><h1>Aclamada por la crítica</h1></div> 
+      <section class="post-list">
+         <a href="#" class="post">
+            <figure class="post-image">
+               <img src="maxresdefault.jpg" alt="">
+            </figure>
+            <span class="post-overlay">
+               <h2>Mascotas, la vida secreta 2</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, maxime?</p>
+            </span>
+         </a>
+         <a href="#" class="post">
+            <figure class="post-image">
+               <img src="maxresdefault.jpg" alt="">
+            </figure>
+            <span class="post-overlay">
+               <h2>Mascotas, la vida secreta 2</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, maxime?</p>
+            </span>
+         </a>
+         <a href="#" class="post">
+            <figure class="post-image">
+               <img src="maxresdefault.jpg" alt="">
+            </figure>
+            <span class="post-overlay">
+               <h2>Mascotas, la vida secreta 2</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, maxime?</p>
+            </span>
+         </a>
+      </section>
+      <div class="titulo"><h1>No te debes perder</h1></div> 
+      <section class="post-list">
+         <a href="#" class="post">
+            <figure class="post-image">
+               <img src="maxresdefault.jpg" alt="">
+            </figure>
+            <span class="post-overlay">
+               <h2>Mascotas, la vida secreta 2</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, maxime?</p>
+            </span>
+         </a>
+         <a href="#" class="post">
+            <figure class="post-image">
+               <img src="maxresdefault.jpg" alt="">
+            </figure>
+            <span class="post-overlay">
+               <h2>Mascotas, la vida secreta 2</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, maxime?</p>
+            </span>
+         </a>
+         <a href="#" class="post">
+            <figure class="post-image">
+               <img src="maxresdefault.jpg" alt="">
+            </figure>
+            <span class="post-overlay">
+               <h2>Mascotas, la vida secreta 2</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, maxime?</p>
+            </span>
+         </a>
+      </section>
+
+
+   </h1></div>
+   <div class="item footer"><h1>FOOTER</h1></div>  
+      </section>
+</div>   
+   
+</body>
+</html>
